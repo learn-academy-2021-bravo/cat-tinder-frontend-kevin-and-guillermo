@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -8,32 +9,40 @@ import HeroShow from './pages/HeroShow'
 import HeroNew from './pages/HeroNew'
 import HeroEdit from './pages/HeroEdit'
 import NotFound from './pages/NotFound'
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+
 import mockHero from './mockHero.js'
 
-class App extends Component{
+class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      hero: mockHero
+      heros: mockHero
     }
   }
-}
 
-
-
-function App(){
-  return (
-  <>
-    <Header/>
+render(){
+  // console.log(this.state.heros)
+  return(
+  <Router>
+  <Header/>
+      <Switch>
+      <Route exact path="/" component={ Home } />
+      <Route path="/heroindex" component={ HeroIndex } />
+      <Route path="/heroshow/:id" component={ HeroShow } />
+      <Route path="/heronew" component={ HeroNew } />
+      <Route path="/heroedit/:id" component={ HeroEdit } />
+      <Route component={ NotFound }/>
+      </Switch>
     <Footer/>
-    <Home/>
-    <HeroIndex/>
-    <HeroShow/>
-    <HeroNew/>
-    <HeroEdit/>
-    <NotFound/>
-  </>
+  </Router>
   );
+}
 }
 
 export default App;

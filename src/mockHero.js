@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 let heros = [
     {
@@ -23,4 +23,4 @@ let heros = [
       superpower: "powers from greek gods"
     }
   ]
-  export default cats
+  export default heros
