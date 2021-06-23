@@ -4,7 +4,7 @@ export class HeroShow extends Component {
     render() {
         return (
             <div>
-                <h1>this is my homeshow page</h1>
+                <h1>this is my heroshow page</h1>
             </div>
         )
     }

@@ -32,7 +32,7 @@ render(){
     <Header/>
       <Switch>
         <Route exact path="/" component={ Home } />
-        <Route path="/heroindex" component={ HeroIndex } />
+        <Route path="/heroindex" render={( props ) =>  <HeroIndex heros={this.state.heros}/> }/>
         <Route path="/heroshow/:id" component={ HeroShow } />
         <Route path="/heronew" component={ HeroNew } />
         <Route path="/heroedit/:id" component={ HeroEdit } />

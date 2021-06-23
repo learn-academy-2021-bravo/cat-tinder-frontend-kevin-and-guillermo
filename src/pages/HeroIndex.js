@@ -5,6 +5,9 @@ export class HeroIndex extends Component {
         return (
             <div>
                 <h1>this is my heroindex page</h1>
+                {this.props.heros.map(hero => {
+                    return <p key = {hero.id}>{hero.name}</p>
+                })}
             </div>
         )
     }
