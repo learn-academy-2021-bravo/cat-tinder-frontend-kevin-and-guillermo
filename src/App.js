@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React, { Component } from 'react'
 import './App.css';
 import Header from './components/Header'
@@ -30,14 +29,14 @@ render(){
   // console.log(this.state.heros)
   return(
   <Router>
-  <Header/>
+    <Header/>
       <Switch>
-      <Route exact path="/" component={ Home } />
-      <Route path="/heroindex" component={ HeroIndex } />
-      <Route path="/heroshow/:id" component={ HeroShow } />
-      <Route path="/heronew" component={ HeroNew } />
-      <Route path="/heroedit/:id" component={ HeroEdit } />
-      <Route component={ NotFound }/>
+        <Route exact path="/" component={ Home } />
+        <Route path="/heroindex" component={ HeroIndex } />
+        <Route path="/heroshow/:id" component={ HeroShow } />
+        <Route path="/heronew" component={ HeroNew } />
+        <Route path="/heroedit/:id" component={ HeroEdit } />
+        <Route component={ NotFound }/>
       </Switch>
     <Footer/>
   </Router>
