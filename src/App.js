@@ -33,7 +33,11 @@ render(){
       <Switch>
         <Route exact path="/" component={ Home } />
         <Route path="/heroindex" render={( props ) =>  <HeroIndex heros={this.state.heros}/> }/>
-        <Route path="/heroshow/:id" component={ HeroShow } />
+        <Route path="/heroshow/:id" render= {(props) => {
+          let id = props.match.params.id
+          let hero = this.state.heros.find(hero => hero.id === +id)
+          return <HeroShow hero = {hero}/>
+        }} />
         <Route path="/heronew" component={ HeroNew } />
         <Route path="/heroedit/:id" component={ HeroEdit } />
         <Route component={ NotFound }/>
