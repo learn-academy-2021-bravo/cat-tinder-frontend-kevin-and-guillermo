@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+// import { Nav, NavItem } from 'reactstrap'
+// import { NavLink } from 'react-router-dom'
 
 export class Footer extends Component {
     render() {
