@@ -19,7 +19,7 @@ let heros = [
       id: 3,
       name: "Wonderwoman",
       age: 5000,
-      enjoys: "getting all the attention",
+      enjoys: "being an ambassador, and relaxing on Paradise Island",
       superpower: "powers from greek gods"
     }
   ]
