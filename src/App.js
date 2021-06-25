@@ -21,12 +21,47 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      heros: mockHero
+      heros: []
     }
   }
 
+  componentDidMount(){
+    this.readHero()
+  }
+
+  readHero = () => {
+    fetch("http://localhost:3000/heros")
+    .then(response => {
+      return response.json()
+    })
+    .then(herosArray => {
+      this.setState({ heros: herosArray})
+    })
+    .catch(errors => {
+      console.log("hero read fetch errors", errors)
+    })
+  }
+
   createHero = (newhero) => {
-    console.log(newhero)
+    fetch("http://localhost:3000/heros", {
+      body: JSON.stringify(newhero),
+      headers:{
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response =>{
+      if(response.status === 422){
+        alert("please check submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.readHero()
+    })
+    .catch(errors => {
+      console.log("create errors:", errors)
+    })
   }
 
 render(){

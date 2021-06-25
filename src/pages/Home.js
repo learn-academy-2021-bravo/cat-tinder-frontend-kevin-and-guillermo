@@ -4,8 +4,8 @@ export class Home extends Component {
     render() {
         return (
             <div>
-                <h1>this is my home page</h1>
-                {/* <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Marc_Spector_39.jpg"></img> */}
+                <h3>It's Like Tinder But For The Superhero In You</h3>
+                <img src="https://www.comicbasics.com/wp-content/uploads/2020/08/The-Top-10-Greatest-Superheroes-Without-Superpowers-In-Comics-Today.jpg" className='homepic'></img>
             </div>
         )
     }
