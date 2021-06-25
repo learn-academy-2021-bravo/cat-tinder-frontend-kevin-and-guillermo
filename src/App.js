@@ -25,8 +25,11 @@ class App extends Component {
     }
   }
 
+  createHero = (newhero) => {
+    console.log(newhero)
+  }
+
 render(){
-  // console.log(this.state.heros)
   return(
   <Router>
     <Header/>
@@ -38,7 +41,7 @@ render(){
           let hero = this.state.heros.find(hero => hero.id === +id)
           return <HeroShow hero = {hero}/>
         }} />
-        <Route path="/heronew" component={ HeroNew } />
+        <Route path="/heronew" render={(props) => <HeroNew createHero={this.createHero}/> } />
         <Route path="/heroedit/:id" component={ HeroEdit } />
         <Route component={ NotFound }/>
       </Switch>

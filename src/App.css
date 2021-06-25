@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.notFoundPic{
+  width: 40%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* margin-left: 50%; */
+}
+
+.notFoundText{
+  text-align: center;
+}
+
+section{
+  width: 100%;
+  height: 100vh;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import heros from '../mockHero'
+// import heros from '../mockHero'
 
 export class HeroIndex extends Component {
     render() {
