@@ -9,7 +9,7 @@ describe('When App renders', () => {
     it('provides a route "/NotFound" to the notfound component', () => {
         const renderedApp = shallow(<NotFound/>)
         const renderedNotFoundRoute = renderedApp.find("h1")
-        expect(renderedNotFoundRoute.text()).toEqual("this is my notfound page")
+        expect(renderedNotFoundRoute.text()).toEqual("!!!No Heroes Here!!!")
 
        
     })

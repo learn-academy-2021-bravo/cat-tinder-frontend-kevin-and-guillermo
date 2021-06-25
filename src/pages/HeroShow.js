@@ -9,9 +9,11 @@ export class HeroShow extends Component {
             <div>
                 <h1>this is my heroshow page</h1>
                 <p>{ hero.name }</p>
+                <img src={ hero.picture } alt="user picture"></img>
                 <p>{ hero.age }</p>
                 <p>{ hero.enjoys }</p>
                 <p>{ hero.superpower }</p>
+                
             </div>
         )
     }

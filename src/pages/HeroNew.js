@@ -8,6 +8,7 @@ export class HeroNew extends Component {
         this.state = {
             form: {
                 name: "",
+                picture: "",
                 age: "",
                 enjoys: "",
                 superpower: ""
@@ -40,6 +41,13 @@ export class HeroNew extends Component {
                     </FormGroup>
                     <br/>
                     <FormGroup>
+                        <Label for = "picture">Hero's Picture</Label>
+                        <Input type = "text" name = "picture" 
+                        onChange={this.handleChange}
+                        value = { this.state.form.picture }/>
+                    </FormGroup>
+                    <br/>
+                    <FormGroup>
                         <Label for = "age">Hero's Age</Label>
                         <Input type = "text" name = "age" 
                         onChange={this.handleChange}
@@ -59,6 +67,7 @@ export class HeroNew extends Component {
                         onChange={this.handleChange}
                         value = { this.state.form.superpower }/>
                     </FormGroup>
+                    
                     <Button name="submit" onClick={this.handleSubmit}>Create Hero</Button>
                 </Form>
                 {this.state.submitted && <Redirect to = "/heroindex" />}

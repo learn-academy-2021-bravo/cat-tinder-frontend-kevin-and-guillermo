@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import fatcap from '../assets/fatcap.jpeg'
 
-export class NotFound extends Component {
+class NotFound extends Component {
     render() {
         return (
             <div>
-                <h1>this is my notfound page</h1>
+                <h1 className="notFoundText">!!!No Heroes Here!!!</h1>
+                <img src={fatcap} alt="fat captain america eating cookies" 
+                className="notFoundPic"/>
             </div>
         )
     }
