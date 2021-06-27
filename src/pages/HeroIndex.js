@@ -8,14 +8,15 @@ export class HeroIndex extends Component {
         console.log(heros)
         return (
             <div>
-                <h1>this is my heroindex page</h1>
+                <main className="heroIndex">
                     {heros && heros.map(hero => {
                     return(
-                        <NavLink to = {`/heroshow/${hero.id}`} key = {hero.id}>
+                        <NavLink className="herolink" to = {`/heroshow/${hero.id}`} key = {hero.id}>
                             <p>{hero.name}</p>
                         </NavLink>
                     )
                     })}
+                </main>
                     
          
             </div>

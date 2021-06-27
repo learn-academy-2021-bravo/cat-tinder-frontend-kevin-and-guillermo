@@ -7,12 +7,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
+
 } from 'reactstrap';
 
 const Example = (props) => {
@@ -29,15 +24,15 @@ const Example = (props) => {
           <Nav className="mr-auto" navbar>
               <br/>
           <NavItem>
-              <PathLink  to = '/herohome'>Heroes Homepage</PathLink>
+              <PathLink  to = '/'>Heroes Homepage</PathLink>
             </NavItem>
             <br/>
             <NavItem>
-              <PathLink  to = '/heroindex'>All your Heroes</PathLink>
+              <PathLink  to = '/heroindex'>All Heroes</PathLink>
             </NavItem>
             <br/>
             <NavItem>
-              <PathLink  to = '/heronew'>Add A New Hero</PathLink>
+              <PathLink  to = '/heronew'>Add New Hero</PathLink>
             </NavItem>
           </Nav>
           {/* <NavbarText>Simple Text</NavbarText> */}

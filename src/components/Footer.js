@@ -1,23 +1,20 @@
-import React, { useState } from 'react';
-import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
+import React from 'react';
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
-const Example = (props) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggle = () => setDropdownOpen(!dropdownOpen);
-
+const Example = () => {
   return (
     <div>
-      <Nav>
+      <Nav className='footerInfo'>
         <NavItem>
           <NavLink href="/" active>Heroes Homepage</NavLink>
         </NavItem> 
         <NavItem>
-          <NavLink href="/heroindex">View All Heroes</NavLink>
+          <NavLink href="/heroindex">All Heroes</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/heronew">Add A New Hero</NavLink>
+          <NavLink href="/heronew">Add New Hero</NavLink>
         </NavItem>
+        <p>Created By Guillermo & Kevin</p>
       </Nav>
     </div>
   );

@@ -31,8 +31,9 @@ export class HeroNew extends Component {
     render() {
         return (
             <div>
-                <h1>this is my heronew page</h1>
+                <main className="main">
                 <Form>
+                    <br/>
                     <FormGroup>
                         <Label for = "name">Hero's Name</Label>
                         <Input type = "text" name = "name" 
@@ -67,11 +68,11 @@ export class HeroNew extends Component {
                         onChange={this.handleChange}
                         value = { this.state.form.superpower }/>
                     </FormGroup>
-                    
+                    <br/>
                     <Button name="submit" onClick={this.handleSubmit}>Create Hero</Button>
                 </Form>
                 {this.state.submitted && <Redirect to = "/heroindex" />}
-
+                </main>
             </div>
         )
     }
