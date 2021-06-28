@@ -15,7 +15,7 @@ import {
   Switch
 } from 'react-router-dom'
 
-import mockHero from './mockHero.js'
+// import mockHero from './mockHero.js'
 
 class App extends Component {
   constructor(props){
@@ -43,6 +43,7 @@ class App extends Component {
   }
 
   createHero = (newhero) => {
+    console.log(newhero)
     fetch("http://localhost:3000/heros", {
       body: JSON.stringify(newhero),
       headers:{
@@ -64,6 +65,24 @@ class App extends Component {
     })
   }
 
+  deleteHero = (id) => {
+    fetch(`http://localhost:3000/heros/${id}`, {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "DELETE"
+  })
+  .then(response => {
+    return response.json()
+  })
+  .then(payload => {
+    return this.readHero()
+  })
+  .catch(errors => {
+    console.log("delete errors:", errors)
+  })
+  }
+
 render(){
   return(
   <Router>
@@ -74,7 +93,7 @@ render(){
         <Route path="/heroshow/:id" render= {(props) => {
           let id = props.match.params.id
           let hero = this.state.heros.find(hero => hero.id === +id)
-          return <HeroShow hero = {hero}/>
+          return <HeroShow hero = {hero} deleteHero={this.deleteHero}/>
         }} />
         <Route path="/heronew" render={(props) => <HeroNew createHero={this.createHero}/> } />
         <Route path="/heroedit/:id" component={ HeroEdit } />

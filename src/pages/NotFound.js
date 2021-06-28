@@ -4,7 +4,7 @@ import fatcap from '../assets/fatcap.jpeg'
 class NotFound extends Component {
     render() {
         return (
-            <div>
+            <div className="main">
                 <h1 className="notFoundText">!!!No Heroes Here!!!</h1>
                 <img src={fatcap} alt="fat captain america eating cookies" 
                 className="notFoundPic"/>
