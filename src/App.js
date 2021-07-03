@@ -15,18 +15,72 @@ import {
   Switch
 } from 'react-router-dom'
 
-import mockHero from './mockHero.js'
+// import mockHero from './mockHero.js'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      heros: mockHero
+      heros: []
     }
+  }
+
+  componentDidMount(){
+    this.readHero()
+  }
+
+  readHero = () => {
+    fetch("http://localhost:3000/heros")
+    .then(response => {
+      return response.json()
+    })
+    .then(herosArray => {
+      this.setState({ heros: herosArray})
+    })
+    .catch(errors => {
+      console.log("hero read fetch errors", errors)
+    })
   }
 
   createHero = (newhero) => {
     console.log(newhero)
+    fetch("http://localhost:3000/heros", {
+      body: JSON.stringify(newhero),
+      headers:{
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response =>{
+      if(response.status === 422){
+        alert("please check submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.readHero()
+    })
+    .catch(errors => {
+      console.log("create errors:", errors)
+    })
+  }
+
+  deleteHero = (id) => {
+    fetch(`http://localhost:3000/heros/${id}`, {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "DELETE"
+  })
+  .then(response => {
+    return response.json()
+  })
+  .then(payload => {
+    return this.readHero()
+  })
+  .catch(errors => {
+    console.log("delete errors:", errors)
+  })
   }
 
 render(){
@@ -39,7 +93,7 @@ render(){
         <Route path="/heroshow/:id" render= {(props) => {
           let id = props.match.params.id
           let hero = this.state.heros.find(hero => hero.id === +id)
-          return <HeroShow hero = {hero}/>
+          return <HeroShow hero = {hero} deleteHero={this.deleteHero}/>
         }} />
         <Route path="/heronew" render={(props) => <HeroNew createHero={this.createHero}/> } />
         <Route path="/heroedit/:id" component={ HeroEdit } />

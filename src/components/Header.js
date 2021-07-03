@@ -7,12 +7,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
+
 } from 'reactstrap';
 
 const Example = (props) => {
@@ -23,21 +18,21 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">Hero's Tinder</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
               <br/>
           <NavItem>
-              <PathLink  to = '/herohome'>Heroes Homepage</PathLink>
+              <PathLink  to = '/'>Heroes Homepage</PathLink>
             </NavItem>
             <br/>
             <NavItem>
-              <PathLink  to = '/heroindex'>All your Heroes</PathLink>
+              <PathLink  to = '/heroindex'>All Heroes</PathLink>
             </NavItem>
             <br/>
             <NavItem>
-              <PathLink  to = '/heronew'>Add A New Hero</PathLink>
+              <PathLink  to = '/heronew'>Add New Hero</PathLink>
             </NavItem>
           </Nav>
           {/* <NavbarText>Simple Text</NavbarText> */}

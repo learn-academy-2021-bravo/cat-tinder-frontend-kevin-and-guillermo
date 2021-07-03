@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import {Redirect} from 'react-router-dom'
 
+
 export class HeroNew extends Component {
     constructor(props){
         super(props)
@@ -31,47 +32,48 @@ export class HeroNew extends Component {
     render() {
         return (
             <div>
-                <h1>this is my heronew page</h1>
+                <main className="main">
                 <Form>
+                    <br/>
                     <FormGroup>
-                        <Label for = "name">Hero's Name</Label>
+                        <Label for = "name">Whats your hero's name?</Label>
                         <Input type = "text" name = "name" 
                         onChange={this.handleChange}
                         value = { this.state.form.name }/>
                     </FormGroup>
                     <br/>
                     <FormGroup>
-                        <Label for = "picture">Hero's Picture</Label>
+                        <Label for = "picture">Add your hero's picture</Label>
                         <Input type = "text" name = "picture" 
                         onChange={this.handleChange}
                         value = { this.state.form.picture }/>
                     </FormGroup>
                     <br/>
                     <FormGroup>
-                        <Label for = "age">Hero's Age</Label>
+                        <Label for = "age">Whats your hero's age?</Label>
                         <Input type = "text" name = "age" 
                         onChange={this.handleChange}
                         value = { this.state.form.age }/>
                     </FormGroup>
                     <br/>
                     <FormGroup>
-                        <Label for = "enjoys">Hero's Hobbies</Label>
+                        <Label for = "enjoys">What does your hero enjoy to do?</Label>
                         <Input type = "text" name = "enjoys" 
                         onChange={this.handleChange}
                         value = { this.state.form.enjoys }/>
                     </FormGroup>
                     <br/>
                     <FormGroup>
-                        <Label for = "superpower">Hero's Superpower</Label>
+                        <Label for = "superpower">Whats your hero's superpower?</Label>
                         <Input type = "text" name = "superpower" 
                         onChange={this.handleChange}
                         value = { this.state.form.superpower }/>
                     </FormGroup>
-                    
+                    <br/>
                     <Button name="submit" onClick={this.handleSubmit}>Create Hero</Button>
                 </Form>
                 {this.state.submitted && <Redirect to = "/heroindex" />}
-
+                </main>
             </div>
         )
     }
